@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Angela's Photo Editor</title>
+  
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <head>
+  <title>
+    Angela's GreenScreen
+  </title>
+  <script src="https://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js">
+  </script>
+</head>
+<body>
+  <h1>Welcome to Angela's Photo Editor</h1>
+  <h2>Filters</h2>
+  <p class="txt">
+    Please upload your picture using the button below to modify your picture.
+  </p>
+  <input type="file" multiple="false" accept="image/*" id="finput" onchange="upload()">
+  <br><br>
+  <input type="button" value="Grayify" onclick="makeGray()">
+  <input type="button" value="Redify" onclick="makeRed()">
+  <input type="button" value="Greenify" onclick="makeGreen()">
+  <input type="button" value="Blueify" onclick="makeBlue()">
+  <input type="button" value="Rainbowify" onclick="makeRainbow()">
+  <br><br>
+  <input type="button" value="Reset" onclick="resetCanvas()"> 
+  <br><br>
+  <canvas id="can">
+  </canvas>
+  <br><br>
+  <h2>Green Screen</h2>
+  <p class="txt">
+    Please upload your foreground and background pictures using the buttons below to create the greenscreen effect.
+  </p>
+  Foreground:
+  <input type="file" multiple="false" accept="image/*" id="fgfile" onchange="loadForegroundImage()">
+  <br><br>
+  Background: <input type="file" multipe="false" accept="image/*" id="bgfile" onchange="loadBackgroundImage()">
+  <br><br>
+  <input type="button" value="Green Screen" onclick="doGreenScreen()">
+  <input type="button" value="Clear Canvases" onclick="clearCanvas()">
+  <br><br>
+  <canvas id="fgcan">
+  </canvas>
+  <canvas id="bgcan">
+  </canvas>
+  <br><br>
+  <h2>Steganography</h2>
+  <p class="txt">
+  Please upload a picture you want to hide and a picture you want to hide the message in.
+  </p>
+  Image to Hide: <input type="file" multiple="false" accept="image/*" id="hidefile" onchange="loadHideImage()">
+  <br><br>
+  Image to Show: <input type="file" multiple="false" accept="image/*" id="showfile" onchange="loadShowImage()">
+  <br><br>
+  <input type="button" value="Do the Magic" onclick="steganography()">
+  <input type="button" value="Clear Canvases" onclick="clearCanvasSteg()">
+  <input type="button" value="Undo the Magic" onclick="undosteg()">
+  <br><br>
+  <canvas id="hidecan">
+  </canvas>
+  <canvas id="showcan">
+  </canvas>
+</body>
+  
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>
