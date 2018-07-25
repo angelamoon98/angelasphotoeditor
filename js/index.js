@@ -13,7 +13,7 @@ function makeGray() {
   var imagecan = document.getElementById("can");
   var imagecont = imagecan.getContext("2d");
   imagecont.clearRect(0, 0, imagecan.width, imagecan.height);
-  for(var pixel of image.values()) {
+  for(var pixel of img.values()) {
     var x = pixel.getX();
     var y = pixel.getY();
     var avg = (pixel.getRed() + pixel.getGreen() + pixel.getBlue()) / 3;
