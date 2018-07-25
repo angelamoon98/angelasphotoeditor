@@ -150,6 +150,20 @@ function doGreenScreen() {
     alert("background not loaded");
   }
   clearCanvas();
+  var width = 0;
+  var height = 0;
+  if(fgImage.getWidth() < bgImage.getWidth()) {
+    width = fgImage.getWidth();
+  } else {
+    width = bgImage.getWidth();
+  }
+  if(fgImage.getHeight() < bgImage.getHeight()) {
+    height = fgImage.getHeight();
+  } else {
+    height = bgImage.getHeight();
+  }
+  fgImage = crop(fgImage, width, height);
+  bgImage = crop(bgImage, width, height);
   var output = new SimpleImage(fgImage.getWidth(), fgImage.getHeight());
   for(var pixel of fgImage.values()) {
     var x = pixel.getX();
